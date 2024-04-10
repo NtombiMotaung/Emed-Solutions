@@ -1,0 +1,300 @@
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(235, 243, 255);
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-image: linear-gradient(to right, rgb(141, 240, 253), rgb(222, 142, 247));
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #cd91e9;
+        color: white;
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {
+            display: none;
+        }
+
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {
+            position: relative;
+        }
+
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .container {
+        display: flex;
+        height: calc(100vh - 50px); /* Subtracting the height of the navbar */
+        margin-top: 50px;
+    }
+
+    .left-side {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #flyingImage {
+        position: absolute;
+        top: 200px; /* Adjust to position off-screen */
+        left: -200px; /* Adjust to position off-screen */
+        animation: flyIn 2s forwards;
+        width: 500px; /* Set the width to the desired size of the logo */
+        height: 500px;
+    }
+
+    @keyframes flyIn {
+        from {
+            top: -200px;
+            left: -200px;
+        }
+        to {
+            top: 50px;
+            left: 250px;
+        }
+    }
+
+    .right-side {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start; /* Align items to the start (left) */
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .container .text {
+        font-size: 24px;
+        text-align: left;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden; /* Hide overflow text */
+        border-right: 1px solid; /* Create typing cursor effect */
+        animation: typingAnimation 3s steps(16, end), blinkCursor 0s 3s forwards; /* Adjust duration and steps as needed */
+        margin-top: -300px;
+    }
+
+    @keyframes typingAnimation {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blinkCursor {
+        from, to { border-color: transparent; }
+        50% { border-color: black; }
+    }
+
+    /* contacts styling */
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Center vertically */
+        margin-top: 100px;
+    }
+
+    .info {
+        text-align: center;
+        margin-top: 10rem;
+    }
+
+    .info h1{
+        font-size: 3rem;
+    }
+
+    .info h4{
+        font-size: 20px
+    }
+
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 2px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-image: linear-gradient(to right, rgb(141, 240, 253), rgb(222, 142, 247));
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 12px 20px; /* Adjust padding to match input fields */
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: 400px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-image: linear-gradient(to right, rgb(141, 240, 253), rgb(222, 142, 247));
+        height: 150px;
+    }
+
+    .footer-columns {
+        display: flex;
+        /* Adjust the gap and margin to control spacing and positioning */
+        gap: 150px; /* Adjusts the space between the two columns */
+        margin-right: 30%; /* Brings the columns closer to the right */
+    }
+
+    .footer-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-logo {
+        position: relative; /* Adjust position if necessary */
+        width: 100px; /* Adjust the width of the logo */
+        height: auto; /* Maintain aspect ratio */
+        z-index: 1; /* Ensure the logo is above other content */
+    }
+
+
+
+    #inTouch {
+        position: absolute; /* Position the button absolutely */
+        bottom: 20px; /* Adjust bottom spacing as needed */
+        left: 50%; /* Position the button horizontally in the middle */
+        transform: translateX(-50%);
+    }
+
+    #typingText {
+        font-size: 24px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 1px solid;
+        animation: typingAnimation 3s steps(16, end), blinkCursor 0s 3s forwards;
+        margin-top: -300px;
+    }
+
+    .column {
+        width: calc(25% - 40px); /* Adjust width to include gap */
+        padding: 0 20px; /* Add padding to create gap */
+        margin-bottom: 20px; /* Add margin between rows */
+      }
+      
+      /* Remove extra left and right margins, due to padding in columns */
+      .row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow cards to wrap to next line if necessary */
+        margin: 0 -10px;     }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+        padding: 16px;
+        text-align: center;
+        background-image: linear-gradient(to right, rgb(141, 240, 253), rgb(222, 142, 247));
+        height: 25rem;
+      }
+      
+      /* Responsive columns - one column layout (vertical) on small screens */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+
+    .about{
+        text-align: center;
+    }
+
+    .sides {
+        display: flex; /* Use flexbox for layout */
+        align-items: center; /* Vertically center items */
+        gap: 20px; /* Add gap between image and text */
+        padding: 20px;
+        margin-left: 300px;
+        margin-top: 100px;
+    }
+    
+    .sides .image img {
+        max-width: 100%; /* Make the image responsive */
+        height: auto;
+        width: 300px;
+    }
+    
+    .sides .text {
+        font-size: 20px;
+    }
+       ul {
+        list-style-type: none; /* Remove default bullets */
+        padding-left: 20px; /* Adjust padding to move text closer to ticks */
+    }
+    
+    ul li::before {
+        content: "\2713"; /* Unicode character for a checkmark */
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em; /* Adjust to align ticks with text */
+    }
